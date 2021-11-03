@@ -73,4 +73,14 @@ class User extends Authenticatable
     public function videos(){
         return $this->hasMany('App\Models\Video');
     }
+
+    // Relacion muchos a muchos con Roles
+    public function roles(){
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    // Relacion uno a uno polimorfica con imagen
+    public function image(){
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }
 }
