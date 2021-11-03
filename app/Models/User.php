@@ -69,6 +69,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Post');
     }
 
+    // Relacion uno a muchos con comentarios
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
     // Relacion uno a muchos con videos
     public function videos(){
         return $this->hasMany('App\Models\Video');
